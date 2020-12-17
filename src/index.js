@@ -1,5 +1,5 @@
 const proxy = require('@webserverless/fc-express')
-const app = require('./utils/app');
+const app = require('./app');
 
 const server = new proxy.Server(app);
 
