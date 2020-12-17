@@ -2,11 +2,11 @@ Type: Application
 Name: authing
 Provider:
   - Alibaba
-Version: 0.0.4
+Version: 0.0.5
 Description:
-  zh: 基于Serverless架构的Authing应用
+  zh: 基于 Serverless 架构的 Authing 认证模块
   en: Authoring application based on serverless architecture
-HomePage: https://github.com/wss-git/authing
+HomePage: https://github.com/Authing/authing-alibaba-application
 Tags:
   - zh: 部署函数
     en: Deploy Funtion
