@@ -67,7 +67,7 @@ app.get('/code2token', async (req, res) => {
     ret.userInfo = userInfoResult.data
     res.json(ret)
   } catch (err) {
-    res.json({ code: 500, message: "code 换 token 出错" })
+    res.json({ code: 500, message: "code 换 token 出错" }).status(500)
   }
 })
 
@@ -150,6 +150,22 @@ app.post('/verify-access-token', async (req, res) => {
       });
     }
   }
+})
+app.post('/refresh-token', async (req, res) => {
+  try {
+    const { refreshToken, redirectUri } = req.body
+    const refreshTokenResult = await axios.post(`${config.oidc.issuer}/token`, qs.stringify({
+      client_id: config.oidc.client_id,
+      client_secret: config.oidc.client_secret,
+      redirect_uri: req.body.redirectUri || config.oidc.redirect_uri,
+      grant_type: 'refresh_token',
+      refresh_token: refreshToken
+    }))
+    res.json(refreshTokenResult.data)
+  } catch (err) {
+    res.json({ code: 500, message: err.message }).status(500)
+  }
+
 })
 module.exports = app;
 
