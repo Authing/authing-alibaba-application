@@ -1,0 +1,7 @@
+oidc:
+  issuer: 
+  client_id: 
+  client_secret: 
+  flow: code
+  redirect_uri: 
+  refresh_token: true
