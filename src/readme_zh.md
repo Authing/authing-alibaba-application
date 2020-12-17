@@ -138,7 +138,7 @@ AuthingDemo:
 
 ## 登录
 
-当你需要让用户登录时，让他点击这个链接或者将他重定向到这个地址：http://37679582-**\*\*\*\***.test.functioncompute.com/login
+当你需要让用户登录时，让他点击这个链接或者将他重定向到这个地址：`http://37679582-********.test.functioncompute.com/login`
 
 - 接口说明：发起登录。
 - 接口地址：GET /login
@@ -150,7 +150,7 @@ AuthingDemo:
 
 ## 使用 code 换 token 和用户信息
 
-用户完成登录后，Authing 会返回一个授权码 code 到配置的回调地址，你需要调用 http://37679582-**\*\*\*\***.test.functioncompute.com/code2token 这个接口，完成 code 换 token，token 换用户信息的操作。
+用户完成登录后，Authing 会返回一个授权码 code 到配置的回调地址，你需要调用 `http://37679582-********.test.functioncompute.com/code2token` 这个接口，完成 code 换 token，token 换用户信息的操作。
 
 - 接口说明：使用 Authing 返回的授权码 code 换取 token 和用户信息。
 - 接口地址：GET /code2token

@@ -138,7 +138,7 @@ AuthingDemo:
 
 ## log in
 
-When you need to log in the user, let him click this link or redirect him to this address: http://37679582-**\*\*\*\***.test.functioncompute.com/login
+When you need to log in the user, let him click this link or redirect him to this address: `http://37679582-********.test.functioncompute.com/login`
 
 - Interface description: initiate login.
 - Interface address: GET /login
@@ -150,7 +150,7 @@ When you need to log in the user, let him click this link or redirect him to thi
 
 ## Use code to exchange token and user information
 
-After the user logs in, Authentication will return an authorization code code to the configured callback address. You need to call http://37679582-**\*\*\*\***.test.functioncompute.com/code2token this interface, Complete the code exchange token, token exchange user information operation.
+After the user logs in, Authentication will return an authorization code code to the configured callback address. You need to call `http://37679582-********.test.functioncompute.com/code2token` this interface, Complete the code exchange token, token exchange user information operation.
 
 - Interface description: Use the authorization code code returned by Authing to exchange token and user information.
 - Interface address: GET /code2token
