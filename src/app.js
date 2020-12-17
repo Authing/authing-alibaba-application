@@ -11,7 +11,7 @@ const bodyParser = require('body-parser')
 const jose = require('jose')
 const { implicitLoginUrlGenerator,
   codeLoginUrlGenerator } = require('./helper')
-const yamlConfig = fs.readFileSync(path.resolve('..', 'authing.yml'), 'utf-8');
+const yamlConfig = fs.readFileSync(path.resolve('.', 'authing.yml'), 'utf-8');
 const config = yaml.safeLoad(yamlConfig)
 global.config = config;
 console.log(config)
@@ -43,7 +43,7 @@ app.get('/login', async (req, res) => {
     })
     res.redirect(loginUrl)
   } else {
-    res.json({ code: 500, message: 'authing.yml 文件配置错误，oidc.flow 可选值为 code 和 implicit' }).status(500)
+    res.status(500).json({ code: 500, message: 'authing.yml 文件配置错误，oidc.flow 可选值为 code 和 implicit' })
   }
 })
 app.get('/logout', async (req, res) => {
@@ -67,7 +67,7 @@ app.get('/code2token', async (req, res) => {
     ret.userInfo = userInfoResult.data
     res.json(ret)
   } catch (err) {
-    res.json({ code: 500, message: "code 换 token 出错" }).status(500)
+    res.status(500).json({ code: 500, message: "code 换 token 出错" })
   }
 })
 
@@ -77,7 +77,7 @@ app.post('/verify-id-token', async (req, res) => {
 
   if ((decoded.header).alg === 'RS256') {
     if (!global.jwk) {
-      const jwkResult = await axios.get(`${config.issuer}/.well-known/jwks.json`)
+      const jwkResult = await axios.get(`${config.oidc.issuer}/.well-known/jwks.json`)
       global.jwk = jwkResult.data
     }
 
@@ -163,10 +163,8 @@ app.post('/refresh-token', async (req, res) => {
     }))
     res.json(refreshTokenResult.data)
   } catch (err) {
-    res.json({ code: 500, message: err.message }).status(500)
+    res.status(500).json({ code: 500, message: err.message })
   }
 
 })
 module.exports = app;
-
-app.listen(9000)
