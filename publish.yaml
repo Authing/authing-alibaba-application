@@ -2,7 +2,7 @@ Type: Application
 Name: authing
 Provider:
   - Alibaba
-Version: 0.0.6
+Version: 0.0.7
 Description:
   zh: 基于 Serverless 架构的 Authing 认证模块
   en: Authoring application based on serverless architecture
