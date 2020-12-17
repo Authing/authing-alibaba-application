@@ -30,10 +30,12 @@ Serverless Tool Version: *.*.*
 
 ## Authing
 
-1. 注册或者登陆 [Authing](https://console.authing.cn/login)
+1. 注册或者登录 [Authing](https://console.authing.cn/login)
 2. 根据提示依次创建用户池、应用，进入应用并查看应用配置
 3. 在应用配置中获取：App ID、App Secret 和认证地址
 4. 在此应用下新建一个用户
+
+请参考文档：[创建应用](https://docs.authing.cn/app/create.html)
 
 # 创建应用
 

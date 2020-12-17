@@ -35,6 +35,8 @@ Serverless Tool Version: *.*.*
 3. Obtain in the application configuration: App ID, App Secret and authentication address
 4. Create a new user under this application
 
+Please refer to：[Create application](https://docs.authing.cn/en/app/create.html)
+
 # Create application
 
 ## Initialize the application
